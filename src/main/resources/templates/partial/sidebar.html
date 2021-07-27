@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>crud</title>
+</head>
+<body>
+
+	<!-- sidebar menu -->
+	<div id="sidebar-menu" class="main_menu_side hidden-print main_menu" th:fragment="sidebar">
+		<div class="menu_section">
+			<h3>General</h3>
+			<ul class="nav side-menu">
+
+
+				<li><a><i class="fa fa-tasks"></i>Products<span
+						class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+						<li><a href="/product">Create Product</a></li>
+						<li><a href="/product/list">Product list</a></li>
+						<!-- <li><a href="/view">View Product</a></li> -->
+					</ul></li>
+
+				<li><a><i class="fa fa-calendar"></i> Sales Invoice<span
+						class="fa fa-chevron-down"></span></a>
+					<ul class="nav child_menu">
+						<li><a href="/sale">Sale product</a></li>
+						<!-- <li><a href="/admin/users/sms">View Sale product</a></li> -->
+						<li><a href="/salesinvoicelist">View Sale products List</a></li>
+						<!-- <li><a href="/admin/reports/timesheets">Timesheets</a></li> -->
+					</ul></li>
+
+
+
+			</ul>
+		</div>
+
+	</div>
+
+</body>
+</html>

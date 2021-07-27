@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<title>Admin Layout</title>
+
+<!-- Bootstrap -->
+<link th:href="@{/css/theme/bootstrap.min.css}" rel="stylesheet" />
+<!-- Font Awesome -->
+<link th:href="@{/css/theme/font-awesome.min.css}" rel="stylesheet" />
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/theme/custom.min.css}" />
+
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a href="/admin/" class="site_title"><i class="fa fa-paw"></i>
+							<span>Crud</span></a>
+					</div>
+
+					<div class="clearfix"></div>
+
+					<!-- menu profile quick info -->
+					<div class="profile clearfix">
+						<div class="profile_pic">
+							<img th:src="@{/img/img.jpg}" alt="..."
+								class="img-circle profile_img">
+						</div>
+						<div class="profile_info">
+							<span>Welcome,</span>
+							<h6 style="color: green;">Rayhan Shuvo</h6>
+						</div>
+					</div>
+					<!-- /menu profile quick info -->
+
+					<br />
+
+					<!-- sidebar menu -->
+					<div th:replace="partial/sidebar :: sidebar"></div>
+					<!-- /sidebar menu -->
+
+					<!-- /menu footer buttons -->
+					<div class="sidebar-footer hidden-small">
+						<a data-toggle="tooltip" data-placement="top" title="Settings">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</a> <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+							<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+						</a> <a data-toggle="tooltip" data-placement="top" title="Lock"> <span
+							class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+						</a> <a data-toggle="tooltip" data-placement="top" title="Logout"
+							href="/logout"> <span class="glyphicon glyphicon-off"
+							aria-hidden="true"></span>
+						</a>
+					</div>
+					<!-- /menu footer buttons -->
+				</div>
+			</div>
+
+			<!-- top navigation -->
+			<div th:replace="partial/header :: topnav"></div>
+			<!-- /top navigation -->
+
+			<!-- page content -->
+			<div class="right_col" role="main" style="background-color: white;">
+				<div class="">
+					<div class="page-title">
+						<div class="title_left"></div>
+
+
+					</div>
+
+
+
+					<section layout:fragment="content">
+						<p>Page content goes here</p>
+					</section>
+
+				</div>
+			</div>
+			<!-- /page content -->
+
+			<!-- footer content -->
+			<div th:replace="partial/footer :: footer"></div>
+			<!-- /footer content -->
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/theme/jquery.min.js}"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" th:src="@{/js/theme/bootstrap.min.js}"></script>
+	<!-- Custom Theme Scripts -->
+	<script th:src="@{/js/theme/app.js}"></script>
+
+	<script th:src="@{/js/theme/custom.js}"></script>
+
+
+
+	<script type="text/javascript" th:src="@{/js/common/app.js}"></script>
+
+
+
+
+
+</body>
+</html>

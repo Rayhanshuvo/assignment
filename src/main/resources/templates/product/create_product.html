@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorator="/layout">
+<head>
+<title>Add Product</title>
+</head>
+<body>
+	<section layout:fragment="content">
+		<form action="#" th:action="@{/product/create}"
+			th:object="${productObj}" method="post">
+			<div class="form-group">
+				<label for="productCode">Product Code:</label> <input
+					class="form-control" type="text" th:field="*{productCode}"
+					id="productCode" placeholder="Product Code" name="productCode"> <span
+					th:if="${#fields.hasErrors('productCode')}" th:class="'error'">Enter
+					Product Code</span>
+					
+					<p th:if="${#fields.hasErrors('productCode')}">Invalid Age</p>
+			</div>
+			<div class="form-group">
+				<label for="productName">Product Name:</label> <input
+					class="form-control" type="text" th:field="*{productName}"
+					id="productName" placeholder="Product Name"/> <p
+					th:if="${#fields.hasErrors('productName')}" th:class="'error'">Enter
+					Product Code</p>
+			</div>
+			<div class="form-group">
+				<label for="sellingPrice">Selling Price:</label> <input
+					class="form-control" type="text" th:field="*{sellingPrice}"
+					id="sellingPrice" placeholder="Selling Price"/> <p
+					th:if="${#fields.hasErrors('sellingPrice')}" th:class="'error'">Enter
+					Product Code</p>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+			
+		</form>
+	</section>
+</body>
+</html>

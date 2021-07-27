@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org" layout:decorator="/layout">
+<head>
+<title>Add Product</title>
+</head>
+<body ng-app="InvoiceModule">
+	<section layout:fragment="content">
+
+
+
+		<div ng-controller="invoiceController">
+
+
+
+			<label>Customer Name: <input type="text"
+				ng-model="salesInvoice.customerName"></label><br> <label>Invoice
+				Number: <input type="text" ng-model="salesInvoice.invoiceNumber">
+			</label><br>
+			<div id="abc" ng-repeat="item in lines">
+				<Label> Line Number : <input type="text"
+					ng-model="salesInvoice.salesInvDetails[item].lineNumber"> <label>Product
+						Name : <select ng-model="selectedProduct[item]"
+						ng-options="product.productName for product in productList"
+						ng-change="getSelectedProduct(item)">
+					</select>
+				</label> <label>Quantity : <input type=number ng-model="qty[item]"
+						ng-change="calculateAmount(item)"></label> <label>Price :
+						<input type="text" ng-model="price[item]"
+						ng-change="calculateAmount(item)">
+				</label> <label>Amount : {{amount[item]}}</label>
+			</div>
+			<br>
+			<button ng-click="addDiv()">Add Product</button>
+			<br> <label> Total Amount : {{salesInvoice.totalAmount}}
+				<button type="submit" ng-click="submit()">Submit</button>
+		</div>
+
+
+
+
+
+	</section>
+
+
+</body>
+</html>
